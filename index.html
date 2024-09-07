@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<title>Charts</title>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/chart/chartui.css"/>
+<script nonce="3b55cfa197afa95a3dae7048" src="/2.0/js/jquery-1.6.3.min.js"></script>
+<script nonce="3b55cfa197afa95a3dae7048" src="https://www.dukascopy.com/fxcomm/common/script/?action=signin"></script>
+<style nonce="c1f8dbb8fffc7b221e11b603"> 
+	
+	body, html {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+<!--[if lt IE 9]>
+<script nonce="3b55cfa197afa95a3dae7048" src="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/iecanvas.js"></script>
+<![endif]-->
+<script nonce="3b55cfa197afa95a3dae7048">
+	window.dc = window.dc || {};
+	window.dc.i18n = window.dc.i18n || {};
+	window.dc.i18n.NS = 'chart';
+</script>
+<script nonce="3b55cfa197afa95a3dae7048" src="https://freeserv.dukascopy.com/2.0/index.php?path=common/translation&lang=en"></script>
+<script nonce="3b55cfa197afa95a3dae7048" src="https://freeserv-static.dukascopy.com/2.0/v/0.42.76/chart/chartui.js"></script>
+<script nonce="3b55cfa197afa95a3dae7048">
+	window.onload = function() {
+		var ui = new dc.ChartUI(window.location.search.replace(/^\?/, ''));
+		ui.setTime(1725731036000);
+		ui.setAuthType(dc.chartui.AuthType.OWNFXCOMM);
+		ui.setFxcommOptions({
+			fxcommCountriesUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=common/countries',
+			fxcommUri: 'https://fxcomm-auth.dukascopy.com/',
+			fxcommReturnUri: 'https://freeserv.dukascopy.com/2.0/',
+			fxcommSocialReturnUri: 'https://freeserv.dukascopy.com/2.0/index.php?path=fxcomm/social',
+			fxcommTermsUri: 'https://www.dukascopy.com/fxcomm/register/?action=print-terms',
+			fxcommDownloadTermsUri: 'https://www.dukascopy.com/fxcomm/register/?action=download-terms'
+		});
+				ui.showLogo(false);
+						ui.lang('en');
+						ui.disclaimerURI('https://freeserv.dukascopy.com/2.0/index.php?path=common/disclaimer');
+		ui.watermarkImage('https://freeserv-static.dukascopy.com/2.0/v/0.42.76/chart/watermark.png');
+		ui.chartUri('/2.0/index.php?path=chart/popup');
+		ui.setWorkspaceChartURI('https://freeserv.dukascopy.com/2.0/');
+		ui.setSocialSharingChartURI('https://freeserv.dukascopy.com/2.0/');
+		ui.showContextMenu(true);
+		ui.showNewsButton(true);
+		ui.showObjectPane(true);
+		ui.setSupportTimezone(true);
+		ui.instrumentUri('https://freeserv.dukascopy.com/2.0/index.php?path=common/instruments');
+		ui.downloadifyImage('https://freeserv-static.dukascopy.com/2.0/v/0.42.76/chart/downloadify.png');
+		ui.downloadifySWF('https://freeserv-static.dukascopy.com/2.0/v/0.42.76/chart/downloadify.swf');
+		ui.appendChartOptions({
+			liveEmulation: true,
+			eet: false,
+			dataServerURI: '/2.0/index.php?path=chart/json3',
+			transportType: dc.TransportType.FREESERV,
+			newsServerURI: '/2.0/index.php?path=economic_calendar/getNewsForInstrument',
+			timezonesUri: '/2.0/index.php?path=common/timezones&timezone=America/New_York',
+            usStocksDelay: false,
+            hkStocksDelay: false,
+            jpStocksDelay: false,
+            stocksDelay: true,
+            dayStartTimezone : 'EET',
+            tradingBreaksIndexType: dc.TradingBreaksIndexType.DISABLED
+		});
+		ui.showTradingBreaks(false);
+		ui.setLanguage('en');
+		ui.setFxspiderUri('https://www.dukascopy.com/fxspider');
+		ui.setFxspiderToken('asGFt457kgHqqqg68vdgjJHFtDG6lghy7cdHHfqh');
+		ui.render();
+
+		var chart = ui.getChart();
+		//chart.setDataCache(new dc.CompressedDataCache());
+		chart.setTimeLineScroller(true);
+		chart.init();
+			};
+</script>
+<!-- Google Tag Manager -->
+<script nonce="3b55cfa197afa95a3dae7048">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.nonce='3b55cfa197afa95a3dae7048';j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N5PT8M7');
+
+window.addEventListener('load', function() {
+	var container = document.createDocumentFragment(),
+		bodyElement = document.body,
+		noscriptElm = document.createElement('noscript'),
+		iframeElm = document.createElement('iframe');
+	
+	noscriptElm.appendChild(iframeElm);
+	
+	container.appendChild(document.createComment('Google Tag Manager (noscript)'));
+	container.appendChild(noscriptElm);
+	container.appendChild(document.createComment('End Google Tag Manager (noscript)'));
+	
+	bodyElement.insertBefore(container, bodyElement.firstChild);
+	
+	iframeElm.src = 'https://www.googletagmanager.com/ns.html?id=GTM-N5PT8M7';
+	iframeElm.height = 0;
+	iframeElm.width = 0;
+	iframeElm.style = 'display:none;visibility:hidden';
+});
+
+</script>
+<!-- End Google Tag Manager --><!--LiveInternet counter--><script nonce="3b55cfa197afa95a3dae7048" type="text/javascript"><!--
+    var img = new Image(),
+        url = "//counter.yadro.ru/hit?t26.6;r"+
+            escape(document.referrer)+
+            ((typeof(screen)=="undefined")?"":
+            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+            screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+            ";"+Math.random(),
+        container = document.createElement('a');
+
+    container.href = '//www.liveinternet.ru/click';
+    container.target = '_blank';
+
+    img.onload = function () {
+        document.body.appendChild(container);
+        container.appendChild(img);
+    };
+
+    window.addEventListener('load', function() {
+        img.src = url;
+        img.style.display = 'none';
+        img.border = '0';
+        img.width = '1';
+        img.height = '1';
+    });
+//--></script><!--/LiveInternet-->
